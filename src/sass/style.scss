@@ -194,15 +194,16 @@ body {
     }
     &__wrapper {
       margin: 20px auto 0;
-      width: 90%;
+      width: 95%;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 15px 3px;
     }
     &__single {
-      width: 165px;
+      margin: 0 auto;
       overflow: hidden;
+      flex-basis: 33%;
       &:hover {
         .es-ingr__image {
           transform: scale(1.1);
@@ -211,11 +212,14 @@ body {
     }
     &__image {
       @include img;
-      margin: 10px 0;
+      max-width: 165px;
+      margin: 10px auto;
       transition: all 0.3s;
     }
     &__item {
+      max-width: 165px;
       @include text;
+      margin: 0 auto;
       font-size: 11px;
       text-transform: none;
       font-family: $regular;
@@ -223,6 +227,33 @@ body {
       text-align: left;
     }
   }
+  @media screen and (min-width: 720px) {
+    .es-ingr {
+      &__single {
+        flex-basis: 24.5%;
+      }
+      &__image {
+        max-width: 165px;
+      }
+      &__item {
+        max-width: 165px;
+      }  
+    }
+  }
+  @media screen and (max-width: 520px) {
+    .es-ingr {
+      &__single {
+        flex-basis: 49%;
+      }
+      &__image {
+        max-width: 165px;
+      }
+      &__item {
+        max-width: 165px;
+      }  
+    }
+  }
+
   .es-use {
     margin: 32px auto;
     &__wrapper {
@@ -336,7 +367,7 @@ body {
     }
   }
   .es-obligations {
-    width: 90%;
+    width: 95%;
     margin: 40px auto;
     text-align: center;
     &__title {
@@ -354,11 +385,11 @@ body {
       width: 100%;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: center;
       gap: 10px 10px;
     }
     &__single {
-      width: 340px;
+      width: 320px;
       overflow: hidden;
       position: relative;
       &:hover {
